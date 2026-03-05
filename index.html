@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OYNA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0E14;
+            color: white;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2D3748;
+            border-radius: 10px;
+        }
+
+        /* Animation Utilities */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+        @keyframes zoomIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes slideInBottom { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideInRight { from { transform: translateX(20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes slideOutBottom { from { transform: translateY(0); opacity: 1; } to { transform: translateY(20px); opacity: 0; } }
+        @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        @keyframes scan { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }
+        @keyframes floatY { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        @keyframes pulseSlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        @keyframes shimmerDiagonal { 
+            0% { transform: translateX(-150%) skewX(-20deg); } 
+            100% { transform: translateX(150%) skewX(-20deg); } 
+        }
+        
+        /* NEW: Radar Effect for Map */
+        @keyframes radar {
+            0% { width: 0; height: 0; opacity: 0.8; }
+            100% { width: 200px; height: 200px; opacity: 0; }
+        }
+        /* NEW: Breathe Effect for Markers */
+        @keyframes breathe {
+            0%, 100% { transform: translate(-50%, -100%) scale(1); }
+            50% { transform: translate(-50%, -100%) scale(1.1); }
+        }
+        /* NEW: Story Progress Bar */
+        @keyframes progress {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        .animate-in { animation-duration: 0.6s; animation-fill-mode: both; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+        .animate-out { animation-duration: 0.3s; animation-fill-mode: both; }
+        
+        .fade-in { animation-name: fadeIn; }
+        .fade-out { animation-name: fadeOut; }
+        .zoom-in { animation-name: zoomIn; }
+        
+        .slide-in-from-bottom { animation-name: slideInBottom; }
+        .slide-in-from-bottom-4 { animation-name: slideInBottom; } 
+        .slide-in-from-bottom-5 { animation-name: slideInBottom; }
+        .slide-in-from-bottom-6 { animation-name: slideInBottom; }
+        .slide-in-from-bottom-8 { animation-name: slideInBottom; }
+        .slide-in-from-bottom-10 { animation-name: slideInBottom; }
+        .slide-in-from-bottom-12 { animation-name: slideInBottom; }
+        .slide-in-from-bottom-20 { animation-name: slideInBottom; }
+
+        .slide-in-from-right-10 { animation-name: slideInRight; }
+        .slide-out-to-bottom-10 { animation-name: slideOutBottom; }
+
+        .animate-spin-slow { animation: spinSlow 8s linear infinite; }
+        .animate-shimmer { animation: shimmer 2s infinite; }
+        .animate-scan { animation: scan 2s linear infinite; }
+        .animate-pulse-slow { animation: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        .animate-float-y { animation: floatY 4s ease-in-out infinite; }
+        .animate-shimmer-diagonal { animation: shimmerDiagonal 3s infinite; }
+        
+        .animate-radar { animation: radar 2s infinite ease-out; }
+        .animate-breathe { animation: breathe 3s infinite ease-in-out; }
+        
+        /* Delay Utilities */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-700 { animation-delay: 700ms; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

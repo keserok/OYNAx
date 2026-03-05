@@ -1,0 +1,7 @@
+{
+  "name": "Remix: Oyna Oyuncu WEB",
+  "description": "Halı saha oyuncuları için maç bulma, takım kurma ve taktik geliştirme platformu.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
